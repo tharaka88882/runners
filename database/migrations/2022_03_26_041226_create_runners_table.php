@@ -15,6 +15,8 @@ class CreateRunnersTable extends Migration
     {
         Schema::create('runners', function (Blueprint $table) {
             $table->id();
+            $table->string('external_id');
+            $table->string('name');
             $table->unsignedBigInteger('race_id');
             $table->timestamps();
 

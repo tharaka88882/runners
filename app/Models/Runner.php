@@ -18,7 +18,7 @@ class Runner extends Model
     }
 
     public function form_data(){
-        return $this->hasMany(FormData::class);
+        return $this->hasOne(FormData::class);
     }
     public function last_runs(){
         return $this->hasMany(FormLastRun::class);

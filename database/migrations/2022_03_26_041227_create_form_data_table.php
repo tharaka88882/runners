@@ -15,21 +15,25 @@ class CreateFormDataTable extends Migration
     {
         Schema::create('form_data', function (Blueprint $table) {
             $table->id();
-            $table->String('career');
-            $table->String('1st_up');
-            $table->String('2nd_up');
-            $table->String('3rd_up');
-            $table->String('4th_up');
-            $table->String('track');
-            $table->String('distance');
-            $table->String('Trk_dist');
-            $table->String('firm');
-            $table->String('good');
-            $table->String('sort');
-            $table->String('heavy');
-            $table->String('synthetic');
-            $table->String('night');
-            
+            $table->String('sex')->nullable();
+            $table->String('color')->nullable();
+            $table->String('age')->nullable();
+            $table->String('owner')->nullable();
+            $table->String('career')->nullable();
+            $table->String('_1st_up')->nullable();
+            $table->String('_2nd_up')->nullable();
+            $table->String('_3rd_up')->nullable();
+            $table->String('_4th_up')->nullable();
+            $table->String('track')->nullable();
+            $table->String('distance')->nullable();
+            $table->String('Trk_dist')->nullable();
+            $table->String('firm')->nullable();
+            $table->String('good')->nullable();
+            $table->String('sort')->nullable();
+            $table->String('heavy')->nullable();
+            $table->String('synthetic')->nullable();
+            $table->String('night')->nullable();
+
             $table->unsignedBigInteger('runner_id');
             $table->timestamps();
 

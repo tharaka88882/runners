@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class FormData extends Model
 {
     protected $fillable = [
-        'career',
-        '1st_up',
-        '2nd_up',
-        '3rd_up',
-        '4th_up',
+        'sex',
+        'color',
+        'age',
+        'owner',
+        '_1st_up',
+        '_2nd_up',
+        '_3rd_up',
+        '_4th_up',
         'track',
         'distance',
         'trk_dist',
@@ -29,10 +32,7 @@ class FormData extends Model
         return $this->BelongsTo(Runner::class,'runner_id','id','runners');
 
     }
-    public function runner(){
-        return $this->BelongsTo(Runner::class,'runner_id','id','runners');
 
-    }
 
 
 }

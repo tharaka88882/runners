@@ -17,6 +17,11 @@ class CreateFormLastRunsTable extends Migration
             $table->id();
             //$string->
             $table->unsignedBigInteger('runner_id');
+            $table->string('dt_tot');
+            $table->string('num');
+            $table->string('name');
+            $table->string('date');
+            $table->double('price');
             $table->timestamps();
 
             $table->foreign('runner_id')->references('id')->on('runners')->cascadeOnDelete();

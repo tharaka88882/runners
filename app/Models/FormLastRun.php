@@ -9,9 +9,13 @@ class FormLastRun extends Model
 {
 
     protected $fillable = [
-
+        'dt_tot',
+        'num',
+        'name',
+        'date',
+        'price'
     ];
-    
+
     public function runner(){
         return $this->BelongsTo(Runner::class,'runner_id','id','runners');
 
