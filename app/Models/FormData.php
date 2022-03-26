@@ -29,6 +29,10 @@ class FormData extends Model
         return $this->BelongsTo(Runner::class,'runner_id','id','runners');
 
     }
+    public function runner(){
+        return $this->BelongsTo(Runner::class,'runner_id','id','runners');
+
+    }
 
 
 }
