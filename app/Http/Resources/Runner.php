@@ -22,9 +22,7 @@ class Runner extends JsonResource
             'color' => $this->form_data->color,
             'last_runs'=>$this->last_runs,
 
-            // 'details' => $this->details,
-            // 'created_at' => $this->created_at->format('d/m/Y'),
-            // 'updated_at' => $this->updated_at->format('d/m/Y'),
+        
         ];
     }
 }
