@@ -36,12 +36,18 @@ class RunnerController extends BaseController
 
     public function show($id)
     {
+
+        $data['runners'] = cache('runners', function () use($id) {
+            return Runner::find($id);
+        });
+
        // return json_encode(array('id'=>'1'));
-        $runners = Runner::find($id);
-        if (is_null($runners)) {
+       // $runners = Runner::find($id);
+        // $runner1 =  Page::where('id', $pageId)->first();
+        if (is_null($data['runners'])) {
             return $this->handleError('Runner not found!');
         }
-        return $this->handleResponse(new RunnerResource($runners), 'Runner retrieved.');
+        return $this->handleResponse(new RunnerResource($data['runners']), 'Runner retrieved.');
     }
 
 

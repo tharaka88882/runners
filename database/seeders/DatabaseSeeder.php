@@ -51,6 +51,15 @@ class DatabaseSeeder extends Seeder
         $last_runs->price= 10;
         $last_runs->save();
 
+        $last_runs1 = new \App\Models\FormLastRun();
+        $last_runs1->runner_id=  $runners->id;
+        $last_runs1->dt_tot= '2/12';
+        $last_runs1->num= '2051';
+        $last_runs1->name= 'Guven';
+        $last_runs1->date= '4-Aug-19';
+        $last_runs1->price= 4;
+        $last_runs1->save();
+
 
     }
 }
