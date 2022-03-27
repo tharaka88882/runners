@@ -14,6 +14,7 @@ class Runner extends JsonResource
      */
     public function toArray($request)
     {
+        //Create the json array
         return [
             'id' => $this->id,
             'runner_name' => $this->name,
@@ -22,7 +23,7 @@ class Runner extends JsonResource
             'color' => $this->form_data->color,
             'last_runs'=>$this->last_runs,
 
-        
+
         ];
     }
 }
