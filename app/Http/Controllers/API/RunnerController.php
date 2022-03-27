@@ -12,38 +12,15 @@ use Validator;
 class RunnerController extends BaseController
 {
 
-    // public function index()
-    // {
-    //     $tasks = Task::all();
-    //     return $this->handleResponse(TaskResource::collection($tasks), 'Tasks have been retrieved!');
-    // }
-
-
-    // public function store(Request $request)
-    // {
-    //     $input = $request->all();
-    //     $validator = Validator::make($input, [
-    //         'name' => 'required',
-    //         'details' => 'required'
-    //     ]);
-    //     if($validator->fails()){
-    //         return $this->handleError($validator->errors());
-    //     }
-    //     $task = Task::create($input);
-    //     return $this->handleResponse(new TaskResource($task), 'Task created!');
-    // }
 
 
     public function show($id)
     {
-
+        // Check in the cache before search the databae.
         $data['runners'] = cache('runners', function () use($id) {
             return Runner::find($id);
         });
 
-       // return json_encode(array('id'=>'1'));
-       // $runners = Runner::find($id);
-        // $runner1 =  Page::where('id', $pageId)->first();
         if (is_null($data['runners'])) {
             return $this->handleError('Runner not found!');
         }
@@ -51,29 +28,5 @@ class RunnerController extends BaseController
     }
 
 
-    // public function update(Request $request, Task $task)
-    // {
-    //     $input = $request->all();
 
-    //     $validator = Validator::make($input, [
-    //         'name' => 'required',
-    //         'details' => 'required'
-    //     ]);
-
-    //     if($validator->fails()){
-    //         return $this->handleError($validator->errors());
-    //     }
-
-    //     $task->name = $input['name'];
-    //     $task->details = $input['details'];
-    //     $task->save();
-
-    //     return $this->handleResponse(new TaskResource($task), 'Task successfully updated!');
-    // }
-
-    // public function destroy(Task $task)
-    // {
-    //     $task->delete();
-    //     return $this->handleResponse([], 'Task deleted!');
-    // }
 }
